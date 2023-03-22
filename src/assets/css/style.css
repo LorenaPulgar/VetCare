@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+/* HEADER*/
+.headermodif{
+    margin: 20px 1em auto 5px;
+    display: grid;
+    gap: 35px;
+}
+.imglogo{
+    width: 60px;
+}
+.logo-text{
+    font-family: 'Abel', sans-serif;
+    color: #009698;
+    text-align: left;
+    grid-area: logotext;
+    
+}
+.logo{
+    text-align: right;
+    grid-area: imgeslogo;
+}
+
+.headermodif{
+    grid:
+        "imgeslogo logotext" auto;
+    align-items: start;
+}
+
+/* MENU */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #00A0A3;
+}
+  
+li {
+    float: left;
+}
+  
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+  
+li a:hover {
+    border-bottom: 2px solid white;
+    background-color: #008f92;
+    color: white;
+}
+
+
+.menu li:hover:not(.right) {
+    border-bottom: 2px solid white;
+}
+  
+.menu li.right {
+    float: right;
+}
+  
+.menu .right span {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.menu .right a {
+    border-radius: 70px;
+}
+  
+.menu .right a:hover {
+    color: #008f92;
+    background-color: white;
+}
+
+
