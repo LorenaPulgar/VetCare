@@ -1,26 +1,41 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div clase="logo">
+    <img alt="VetCare logo" src="./assets/Logo-VetCare.png">
+    <h1 class="logo-text"> VetCare</h1>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    
   }
 }
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+
+img {
+  height: 50px;
+}
+
+.logo-text {
+  font-family: 'Abel', sans-serif;
+  color: #009698;
+}
+.logo{
+  display: flex;
+  align-items: center;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 20px;
 }
 </style>
