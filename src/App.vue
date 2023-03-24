@@ -13,13 +13,13 @@
 <script>
 
 import HeaderIn from './components/Headerin.vue';
-import MenuHeader from './components/Menu.vue'; 
+import MenuHeader from './components/Menu.vue';
 
 export default {
   name: 'App',
   components: {
     HeaderIn,
-    MenuHeader
+    MenuHeader,
   }
 }
 </script>
