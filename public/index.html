@@ -7,12 +7,20 @@
     <link rel="icon" href="./Vetcare (2).png">
     <title>VetCare</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </head>
   <body>
     <noscript>
       <strong>Activa JavaScrip en tu navegador para continuar</strong>
     </noscript>
     <div id="app"></div>
+    <div id="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.3603242635604!2d-74.19692894916706!3d11.234882053595634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef4f574d17165f5%3A0xc5de9aa3c002ec14!2sUnimed%20Veterinaria%20Urgencias%2024%20Horas%20Santa%20Marta!5e0!3m2!1ses!2sco!4v1679619648207!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <form action="/search" method="get">
+      <label for="search">Buscar:</label>
+      <input type="text" id="search" name="q">
+      <button type="submit">Buscar</button>
+    </form>  
   </body>
 </html>
