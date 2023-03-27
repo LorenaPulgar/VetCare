@@ -1,0 +1,282 @@
+/* Import de fuentes de Google*/
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;1,200&family=Fjalla+One&family=Source+Sans+Pro&display=swap');
+
+/* CSS primera seccion*/
+#inicio{
+    height: 410px;
+    background-color: #00a0a3;
+}
+.seccionclinicas{
+    display: grid;
+}
+#map{
+    padding: 25px auto auto;
+    grid-area: map;
+}
+.box{
+    border-radius: 0 30px 30px 0;
+    margin: 15px 0 0;
+    width: 580px;
+    background-color: #80CFD1;
+}
+.stymap{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    margin: 15px auto 1px;
+    width: 95%;
+    height: 350px;
+    border:0; 
+    border-radius: 0 30px 30px 0;
+
+}
+.buscarclinicas{
+    margin: 15px 0 0;
+    border-radius: 20px 20px 0 0;
+    background-color: white;
+    width: 80%;
+    grid-area: buscar;
+    justify-content: center;
+}
+
+
+.clinicas{
+    height: 300px;
+    overflow: auto;
+    border-radius: 0 0 20px 20px;
+    text-align: center;
+    width: 80%;
+    background-color: #80CFD1;
+    grid-area: clinicas;
+}
+
+.cli1, .cli2{
+    background-color: #48BBBD;
+}
+
+.textclin{
+    color: white;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 18px;
+}
+
+.nombreclinicas{
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.seccionclinicas{
+    grid:
+        "map buscar" auto
+        "map clinicas" 1fr/
+        1fr 1fr;
+
+    align-items: start;
+}
+
+/* Scroll personalizado para la seccion de busqueda*/
+
+.clinicas::-webkit-scrollbar {
+    background-color: #00a0a3;
+    width: 8px; /* Ancho de la barra de desplazamiento */
+    height: 5px; /* Altura de la barra de desplazamiento */
+    border-radius: 10px; /* Bordes redondeados */
+}
+  
+.clinicas::-webkit-scrollbar-thumb {
+    background-color:white; /* Color del fondo de la barra de desplazamiento */
+    border-radius: 10px; /* Bordes redondeados */
+}
+  
+
+/* Estilo base para la barra de búsqueda */
+input[type="text"] {
+    font-style: italic;
+    padding: 10px;
+    border-color: #00a0a3;
+    border-radius: 50px;
+    background-color: white;
+    font-size: 16px;
+    color: black;
+    width: 300px;
+}
+  
+/* Estilo para el botón de búsqueda */
+button[type="submit"] {
+    height: 50px;
+    padding: 10px 20px;
+    background-color: #00a0a3;
+    border: none;
+    border-radius: 30%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
+}
+  
+  /* Estilo para el ícono de búsqueda */
+.fa-magnifying-glass-location{
+    font-size: 30px;
+    color: white;
+}
+  
+/* Estilo para el contenedor de la barra de búsqueda */
+.buscarclinicas{
+    display: flex;
+    align-items: center;
+}
+  
+/* Estilo para el ícono de búsqueda */
+.search-icon {
+    margin-right: 5px;
+}
+
+/* Seccion conocenos*/
+#Conocenos{
+    height: 410px;
+    background-color: #00a0a3;
+}
+
+.DivCn{
+    margin: 45px;
+    color: white;
+    grid-area: DivCn;
+}
+.imgCn{
+    text-align: center;
+    margin: 35px;
+    grid-area: imgCn;
+}
+.SecConocenos{
+    display: grid;
+    grid:
+        "DivCn imgCn" auto/
+        1fr 1fr;
+}
+
+
+h4{
+    text-transform: uppercase;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.textCn{
+    font-size: 24px;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.dog{
+    width: 350px;
+}
+
+.infografia{
+    width: 100%;
+    height: 410px;
+}
+
+/* Chat Help */
+#help {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+  
+#help img {
+    float: left;
+    border-radius: 50%;
+}
+  
+#help button {
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #EEB9A1;
+    border: none;
+    color: white;
+    padding: 12px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+  
+#chatbot {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    overflow-y: scroll;
+}
+  
+#chatbot button {
+    background-color: transparent;
+    border: 1px solid #000;
+    color: white;
+    padding: 12px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px;
+    justify-content: flex-start;
+}
+
+#chatbot::-webkit-scrollbar {
+    background-color: #00a0a3;
+    width: 8px; /* Ancho de la barra de desplazamiento */
+    height: 5px; /* Altura de la barra de desplazamiento */
+    border-radius: 10px; /* Bordes redondeados */
+}
+  
+#chatbot::-webkit-scrollbar-thumb {
+    background-color:white; /* Color del fondo de la barra de desplazamiento */
+    border-radius: 10px; /* Bordes redondeados */
+}
+  
+  
+
+
+/* Footer */
+
+footer{
+    height: 100px;
+    background-color: #00a0a3;
+}
+
+.piedepagina{
+    padding: 15px 0 0;
+}
+
+h5{
+    text-transform: uppercase;
+    font-family: 'Fjalla One', sans-serif;
+    color: white;
+    text-align: center; 
+}
+  
+.Social{
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+  
+.fa-github,
+.fa-linkedin,
+.fa-whatsapp,
+.fa-instagram{
+    color: white;
+}
+
+
+
+  
+  
