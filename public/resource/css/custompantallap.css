@@ -1,6 +1,10 @@
 /* Import de fuentes de Google*/
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;1,200&family=Fjalla+One&family=Source+Sans+Pro&display=swap');
 
+html{
+    scroll-behavior: smooth;
+}
+
 /* CSS primera seccion*/
 #inicio{
     height: 410px;
