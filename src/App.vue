@@ -12,8 +12,8 @@
 
 <script>
 
-import HeaderIn from './components/Headerin.vue';
-import MenuHeader from './components/Menu.vue';
+import HeaderIn from './components/Headerin.vue'
+import MenuHeader from './components/Menu.vue'
 
 export default {
   name: 'App',
@@ -34,3 +34,4 @@ export default {
 }
 
 </style>
+
