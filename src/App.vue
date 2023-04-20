@@ -14,9 +14,22 @@
 
 import HeaderIn from './components/Headerin.vue'
 import MenuHeader from './components/Menu.vue'
+import { auth } from "./utils/firebase"
+import { onMounted } from "vue"
 
 export default {
   name: 'App',
+  setup(){
+    onMounted(() => {
+      auth.onAuthStateChanged((user) => {
+        if(user){
+          console.log("Usuario Logeado")
+        }else{
+          console.log("Usuario no logeado")
+        }
+      })
+    })
+  },
   components: {
     HeaderIn,
     MenuHeader,
