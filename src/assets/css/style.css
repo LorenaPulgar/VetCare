@@ -62,7 +62,7 @@ li a:hover {
     border-bottom: 2px solid white;
 }
   
-.menu li.right {
+.menu button.right {
     float: right;
 }
   
