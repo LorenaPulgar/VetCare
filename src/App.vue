@@ -27,6 +27,17 @@ import SFooter from './components/Footer.vue';
 
 export default {
   name: 'App',
+  setup(){
+    onMounted(() => {
+      auth.onAuthStateChanged((user) => {
+        if(user){
+          console.log("Usuario Logeado")
+        }else{
+          console.log("Usuario no logeado")
+        }
+      })
+    })
+  },
   components: {
     HeaderIn,
     MenuHeader,
