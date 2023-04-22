@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="help">
-      <img src="../assets/img/apoyo.png" alt="Persona" width="50px" height="50px">
+      <img src="../assets/img/apoyoimgchat.png" alt="Persona">
       <button onclick="showChat()">Necesitas ayuda?</button>
     </div>
     

@@ -187,6 +187,8 @@ h4{
 #help img {
     float: left;
     border-radius: 50%;
+    width: 50px;
+    height: 50px;
 }
   
 #help button {
