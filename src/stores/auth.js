@@ -7,6 +7,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 
+// eslint-disable-next-line no-unused-vars
 export const almacen = defineStore({
   id: "main",
   state: () => ({
@@ -22,10 +23,12 @@ export const almacen = defineStore({
       const auth = getAuth();
       createUserWithEmailAndPassword(auth, this.email, this.password)
         .then((userCredential) => {
+          // eslint-disable-next-line no-unused-vars
           const user = userCredential.user;
           alert("Usuario Registrado!"); // Modifica este alert con sweetAlert
         })
         .catch((error) => {
+          // eslint-disable-next-line no-unused-vars
           const errorCode = error.code;
           this.errorMessage = error.message;
           alert(this.errorMessage);
@@ -38,9 +41,11 @@ export const almacen = defineStore({
         .then((userCredential) => {
           alert("¡Sesión iniciada!"); // Modifica este alert con sweetAlert
           router.push("/auth");
+          // eslint-disable-next-line no-unused-vars
           const user = userCredential.user;
         })
         .catch((error) => {
+          // eslint-disable-next-line no-unused-vars
           const errorCode = error.code;
           this.errorMessage = error.message;
           alert(this.errorMessage);
@@ -54,6 +59,7 @@ export const almacen = defineStore({
           alert("¡Sesión finalizada!"); // Modifica este alert con sweetAlert
         })
         .catch((error) => {
+          // eslint-disable-next-line no-unused-vars
           const errorCode = error.code;
           this.errorMessage = error.message;
           alert(this.errorMessage);
