@@ -1,3 +1,8 @@
+<script setup>
+    import { almacen } from "../stores/auth.js";
+
+const datos = almacen();
+</script>
 <template>
     <nav class="menu">
         <ul>
@@ -5,8 +10,7 @@
             <li><a href="#Conocenos">Conocenos</a></li>
             <li><a href="#Consejos">Consejos</a></li>
             <li><a href="#">Tienda Virtual</a></li>
-            <li class="right"><a href="#"> Ingresa</a></li>
-            <li class="right"><a href="#">Registrate</a></li>
+            <li v-if="datos.isLoggedIn" @click= "GoToLogIn" class="right"><a href="#"> Ingresa/Registrate </a></li>
 
         </ul>
     </nav>
@@ -14,6 +18,11 @@
 
 <script>
 export default {
-    name: "MenuHeader"
+    name: "MenuHeader",
+    methods: {
+        GoToLogIn() {
+            this.$router.push({name: 'Login'})
+        },
+    }
 }
 </script>

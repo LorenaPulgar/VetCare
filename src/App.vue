@@ -1,19 +1,21 @@
 <template>
-  <div class=headermodif>
-    <div class="logo">
-      <img class="imglogo" alt="VetCare-logo" src="./assets/img/Logo-VetCare.png">
+  <div>
+    <div class=headermodif>
+      <div class="logo">
+        <img class="imglogo" alt="VetCare-logo" src="./assets/img/Logo-VetCare.png">
+      </div>
+      <div class="logo-text">
+        <HeaderIn></HeaderIn>
+      </div>
     </div>
-    <div class="logo-text">
-      <HeaderIn></HeaderIn>
-    </div>
+    <MenuHeader></MenuHeader>
+    <SeccionInicio></SeccionInicio>
+    <br>
+    <SConocenos></SConocenos>
+    <ChatHelp></ChatHelp>
+    <br>
+    <SFooter></SFooter>
   </div>
-  <MenuHeader></MenuHeader>
-  <SeccionInicio></SeccionInicio>
-  <br>
-  <SConocenos></SConocenos>
-  <ChatHelp></ChatHelp>
-  <br>
-  <SFooter></SFooter>
 </template>
 
 <script>

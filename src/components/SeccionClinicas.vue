@@ -1,4 +1,5 @@
 <template>
+  <div>
     <br>
     <section id="inicio">
       <div class="seccionclinicas">
@@ -32,6 +33,7 @@
         </div>
       </div>
     </section>
+  </div>
 </template>
 
 <script>

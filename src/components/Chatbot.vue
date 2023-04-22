@@ -1,4 +1,5 @@
 <template>
+  <div>
     <div id="help">
       <img src="../assets/img/apoyo.png" alt="Persona" width="50px" height="50px">
       <button onclick="showChat()">Necesitas ayuda?</button>
@@ -8,6 +9,7 @@
       <button onclick="closeChat()"><i class="fa-solid fa-x" style="color: #00a0a3;"></i></button>
       <!-- Aquí es donde irá el chatbot -->
     </div>
+  </div>
 </template>
 
 <script>
