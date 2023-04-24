@@ -1,3 +1,8 @@
+<script setup>
+import { almacen } from '../stores/auth.js' 
+const datos = almacen() 
+</script>
+
 <template>
     <div>
         <body class="fondopagina">
@@ -27,22 +32,22 @@
                 <!--Formulario de Login y registro-->
                 <div class="contenedor__login-register">
                     <!--Login-->
-                    <form action="" class="formulario__login">
+                    <form @submit.prevent="datos.signIn" class="formulario__login">
                         <h2 class="textTitul">Iniciar Sesión</h2>
-                        <input type="text" placeholder="Correo Electronico">
-                        <input type="password" placeholder="Contraseña">
+                        <input v-model="datos.email" type="email" required="true" placeholder="Correo Electronico">
+                        <input v-model="datos.password" type="password" required="true" placeholder="Contraseña">
                         <a href=""> Haz olvidado tu contraseña?</a>
                         <button>Entrar</button>
                     </form>
 
                     <!--Register-->
-                    <form action="" class="formulario__register">
+                    <form @submit.prevent="datos.register" class="formulario__register">
                         <h2 class="textTitul">Regístrarse</h2>
                         <input type="text" placeholder="Nombre completo">
-                        <input type="text" placeholder="Correo Electronico">
+                        <input v-model="datos.email" type="email" required="true" placeholder="Correo Electronico">
                         <input type="text" placeholder="Usuario">
-                        <input type="password" placeholder="Contraseña">
-                        <input type="password" placeholder="Repetir Contraseña">
+                        <input v-model="datos.password" type="password" required="true" placeholder="Contraseña">
+                        <input v-model="datos.repassword" type="password" required="true" placeholder="Repetir Contraseña">
                         <button>Regístrarse</button>
                     </form>
                 </div>
@@ -57,8 +62,6 @@
 </style>
 
 <script>
-    import "../assets/js/loginjs.js";
-
     export default {
         name: 'LoginComponent',
     }
