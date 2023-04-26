@@ -11,7 +11,9 @@
             <li><a href="#Conocenos">Conocenos</a></li>
             <li><a href="#Consejos">Consejos</a></li>
             <li><a href="#">Tienda Virtual</a></li>
-            <li @click="GoToLogIn" class="right"><a>Ingresa</a></li>
+            <li v-if="!datos.isLoggedIn" @click="GoToLogIn" class="right"><a>Ingresar</a></li>
+            <li v-if="datos.isLoggedIn" @click="datos.signout" class="right"><a>Cerrar Sesión</a></li>
+            <li v-if="datos.isLoggedIn" @click="GoToUserProfile" class="right"><a>Perfil</a></li>
 
         </ul>
     </nav>
@@ -25,6 +27,9 @@ export default {
         GoToLogIn() {
             this.$router.push({name: 'LoginMenu'})
         },
+        GoToUserProfile() {
+            this.$router.push({name: 'UserMenu'})
+        }
     }
 }
 </script>
