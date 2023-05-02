@@ -1,7 +1,7 @@
 .fondopagina {
     background-image: url('../img/fondo.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
 }
 
 *{
@@ -12,11 +12,23 @@
     font-family: 'Roboto', sans-serif;
 }
 
-main{
+.btnvolver{
+    display: inline-block;
+    margin-left: 10px;
+    border: none;
+    height: 40px;
+    width: 60px;
+    border-radius: 10px;
+    color: #008f92;
+}  
+.btnvolver:hover {
+    background-color: white;
+}
+
+.divcontenedor{
     width: 100%;
     padding: 20px;
     margin: auto;
-    margin-top: 100px;
 }
 
 
@@ -25,6 +37,8 @@ main{
     max-width: 800px;
     margin: auto;
     position: relative;
+    margin-top: 100px;
+    height: 550px;
 }
 
 .caja__trasera{
@@ -114,7 +128,7 @@ main{
     width: 100%;
     max-width: 380px;
     position: relative;
-    top: -185px;
+    top: -210px;
     left: 10px;
 
     /*La transicion va despues del codigo JS*/
