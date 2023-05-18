@@ -2,15 +2,20 @@
   <div>
     <div id="help">
       <img src="../assets/img/apoyoimgchat.png" alt="Persona">
-      <button onclick="showChat()">Necesitas ayuda?</button>
-    </div>
-    
-    <div id="chatbot" style="display:none">
-      <button onclick="closeChat()"><i class="fa-solid fa-x" style="color: #00a0a3;"></i></button>
-      <!-- Aquí es donde irá el chatbot -->
+      <button><a href="https://api.whatsapp.com/send?phone=573502602037" target="_blank" class="apilink">¿Necesitas ayuda?</a></button>
     </div>
   </div>
 </template>
+
+<style>
+  .apilink{
+    text-decoration: none;
+    color: white;
+  }
+  .apilink:hover{
+    color: white;
+  }
+</style>
 
 <script>
 export default {

@@ -5,7 +5,7 @@ const datos = almacen()
 
 <template>
     <div class="fondopagina divcontenedor">
-        <button class="btnvolver"><i class="fa-regular fa-circle-xmark fa-xl"></i></button>
+        <button class="btnvolver" @click="GoToHome"><i class="fa-regular fa-circle-xmark fa-xl"></i></button>
         <div class="contenedor__todo">
             <div class="caja__trasera">
                 <div class="caja__trasera-login">
@@ -61,6 +61,11 @@ const datos = almacen()
 <script>
 export default {
     name: 'LoginComponent',
+    methods: {
+        GoToHome(){
+            this.$router.push({name: 'Home'})
+        }
+    },
     mounted() {
         document.getElementById("btn__iniciar-sesion").addEventListener("click", iniciarSesion);
         document.getElementById("btn__registrarse").addEventListener("click", register);
