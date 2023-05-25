@@ -1,6 +1,6 @@
 .fondopagina {
     background-image: url('../img/fondo.jpg');
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: 100%;
 }
 

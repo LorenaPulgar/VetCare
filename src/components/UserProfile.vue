@@ -1,52 +1,117 @@
 <template>
-    <div class="container">
-      <h2 class="mb-4">User Profile</h2>
-      <form>
-        <div class="form-group">
-          <label for="name">Name:</label>
-          <input type="text" id="name" class="form-control" v-model="name" />
-        </div>
-  
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" class="form-control" v-model="email" />cd
-        </div>
-  
-        <button type="submit" class="btn btn-primary" @click.prevent="submitForm">Save</button>
-      </form>
+  <div>
+    <div class=headermodif>
+      <div class="logo">
+        <img class="imglogo" alt="VetCare-logo" src="../assets/img/Logo-VetCare.png">
+      </div>
+      <div class="logo-text">
+        <HeaderIn></HeaderIn>
+      </div>
     </div>
-  </template>
+    <MenuHeader></MenuHeader>
+    <div class="container">
+      <div class="info">
+        <img src="../assets/img/perroperfil.png" alt="Imagen redonda">
+        <p>correo@example.com</p>
+      </div>
+      <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action" data-toggle="modal"
+          data-target="#form-nombre">
+          Modificar nombre
+          <i class="fa-solid fa-chevron-right float-right ml-2"></i>
+        </button>
+        <button type="button" class="list-group-item list-group-item-action" data-toggle="modal"
+          data-target="#form-usuario">
+          Modificar usuario
+          <i class="fa-solid fa-chevron-right float-right ml-2"></i>
+        </button>
+        <button type="button" class="list-group-item list-group-item-action" data-toggle="modal"
+          data-target="#form-contraseña">
+          Modificar contraseña
+          <i class="fa-solid fa-chevron-right float-right ml-2"></i>
+        </button>
+      </div>
+      <div id="form-nombre" class="modal">
+        <!-- Formulario para modificar nombre -->
+        <div class="modal fade" id="form-nombre" tabindex="-1" aria-labelledby="form-nombre-label" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="form-nombre-label">Modificar nombre</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="nombre-actual">Nombre actual:</label>
+                    <input type="text" class="form-control" id="nombre-actual" value="John Doe" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="nombre-nuevo">Nuevo nombre:</label>
+                    <input type="text" class="form-control" id="nombre-nuevo" required>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Guardar cambios</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="form-usuario" class="modal">
+        <!-- Aquí irá el formulario para modificar el usuario -->
+      </div>
+      <div id="form-contraseña" class="modal">
+        <!-- Aquí irá el formulario para modificar la contraseña -->
+      </div>
+    </div>
+  </div>
+</template>
   
-  <script>
-    export default {
-      name: 'UserProfile',
-      data() {
-        return {
-          name: '',
-          email: '',
-        };
-      },
-
+<script>
+import HeaderIn from './Headerin.vue';
+import MenuHeader from './Menu.vue';
+export default {
+  name: "UserProfile",
+  mounted() {
+    // Obtener los botones de la lista desplegable
+    const buttons = document.querySelectorAll('.list-group-item button');
+    // Agregar un event listener a cada botón
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        // Obtener el ID del formulario correspondiente
+        const formId = button.dataset.formId;
+        
+        // Mostrar el formulario correspondiente
+        const form = document.getElementById(formId);
+        form.classList.add('show');
+        
+        // Ocultar los otros formularios
+        const otherForms = document.querySelectorAll('.modal:not(#' + formId + ')');
+        otherForms.forEach((form) => {
+          form.classList.remove('show');
+        });
+      });
+    });
+},
+  data() {
+    return {
+      name: "",
+      email: "",
     };
-  </script>
-  
-  <style scoped>
-  .container {
-    max-width: 500px;
-    margin: auto;
+  },
+  components: {
+    HeaderIn,
+    MenuHeader,
   }
+}
+</script>
   
-  .form-group {
-    margin-bottom: 1.5rem;
-  }
-  
-  .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-  }
-  
-  .btn-primary:hover {
-    background-color: #0069d9;
-    border-color: #0062cc;
-  }
-  </style>  
+<style scoped>
+@import "../assets/css/style.css";
+@import "../assets/css/UserProfile_style.css"
+</style>  
