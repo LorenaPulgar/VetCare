@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Nunito:wght@200&display=swap');
+
+
+.container {
+    margin-top: 30px;
+    width: 600px;
+    border-radius: 40px;
+    height: 400px;
+    background-color: #00A0A3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.info p{
+    color: white;
+    font-family: 'Nunito', sans-serif;
+}
+
+.list-group {
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    max-width: 400px;
+}
+.list-group-item{
+    color: #00A0A3;
+}
+.list-group-item:hover{
+    background-color: #008f92;
+    color: white;
+}
+
+.modal {
+    display: none;
+    /* Aquí puedes agregar estilos para el formulario */
+}
+
+.list-group-item i.fa-chevron-right {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    bottom: 0;
+    margin: auto;
+}
+  
