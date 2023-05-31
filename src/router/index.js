@@ -25,7 +25,12 @@ const router = createRouter({
         path: "/profile",
         name: 'UserMenu',
         component: () => import("../views/UserMenu.vue"),
-      }
+      },
+      {
+        path: "/AboutUs",
+        name: 'SConocenos',
+        component: () => import("../components/SeccionConocenos.vue"),
+      },
       
     ]
   })

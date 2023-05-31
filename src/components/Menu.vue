@@ -6,14 +6,12 @@
 <template>
     <div>
         <nav class="menu">
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#Conocenos">Conocenos</a></li>
-                <li><a href="#Consejos">Consejos</a></li>
-                <li><a href="#">Tienda Virtual</a></li>
+            <ul> 
+                <li><a @click="GotoHome">Inicio</a></li>
+                <li><a href="https://laika.com.co/" target="_blank">Tienda Virtual</a></li>
                 <li v-if="!datos.isLoggedIn" @click="GoToLogIn" class="right"><a>Ingresar</a></li>
                 <li v-if="datos.isLoggedIn" @click="datos.signout" class="right"><a>Cerrar Sesión</a></li>
-                <li v-if="datos.isLoggedIn" @click="GoToUserProfile" class="right"><a>Perfil</a></li>
+                <li v-if="datos.isLoggedIn" @click="GoToUserProfile" class="right"><a>Perfil</a></li> 
             </ul>
         </nav>
     </div>
@@ -23,6 +21,9 @@
 export default {
     name: "MenuHeader",
     methods: {
+        GotoHome() {
+            this.$router.push({name: 'Home'})
+        },
         GoToLogIn() {
             this.$router.push({name: 'LoginMenu'})
         },
