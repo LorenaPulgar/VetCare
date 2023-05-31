@@ -4,15 +4,10 @@
     <section id="inicio">
       <div class="seccionclinicas">
         <div id="map">
-          <div class="box">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.3603242635604!2d-74.19692894916706!3d11.234882053595634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef4f574d17165f5%3A0xc5de9aa3c002ec14!2sUnimed%20Veterinaria%20Urgencias%2024%20Horas%20Santa%20Marta!5e0!3m2!1ses!2sco!4v1679619648207!5m2!1ses!2sco" class="stymap" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
+          <div class="map" style="width: 100px; height: 400px;"></div>
         </div>
         <div class="buscarclinicas">
-          <form>
-            <input type="text" placeholder="Conoce las clinicas cerca de tu zona">
-            <button type="submit" class="btnbuscarclinicas"><i class="fa-solid fa-magnifying-glass-location"></i></button>
-          </form>
+          <input id="autocomplete-input" type="text" placeholder="Conoce las clinicas cerca de tu zona">
         </div>
         <div class="clinicas">
           <div class="cli1">
@@ -37,7 +32,38 @@
 </template>
 
 <script>
+
 export default {
-    name: 'SeccionInicio'
+    name: 'SeccionInicio',
+    mounted(){
+      this.created();
+    },
+    methods: {
+      initMap() {
+        var input = document.getElementById('autocomplete-input');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 12,
+          center: { lat: -33.8688, lng: 151.2195 },
+        });
+        var marker = new google.maps.Marker({
+          map: map,
+          position: { lat: -33.8688, lng: 151.2195 },
+        });
+        autocomplete.addListener('place_changed', function() {
+          var place = autocomplete.getPlace();
+          if (place.geometry && place.geometry.location) {
+            map.setCenter(place.geometry.location);
+            marker.setPosition(place.geometry.location);
+          }
+        });
+      },
+      created() {
+        window.initMap = this.initMap;
+        const script = document.createElement('script');
+        script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyC-OxGWceSwlKMhvjaefdCw25gCDKPmf1U&libraries=places&callback=initMap";
+        document.head.appendChild(script);
+  }
+    },
 }
 </script>
