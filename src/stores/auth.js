@@ -5,7 +5,9 @@ import {
   signOut,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signInWithPopup
 } from "firebase/auth";
+import { GoogleAuthProvider } from 'firebase/auth'
 
 // eslint-disable-next-line no-unused-vars
 export const almacen = defineStore({
@@ -65,5 +67,17 @@ export const almacen = defineStore({
           alert(this.errorMessage);
         });
     },
-  },
-});
+    signInWithGoogle() {
+      const auth = getAuth();
+      const provider = new GoogleAuthProvider();
+    
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          console.log(result.user);
+          router.push("/auth");
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    },
+}});

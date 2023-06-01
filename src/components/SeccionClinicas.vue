@@ -52,11 +52,11 @@ export default {
         var autocomplete = new google.maps.places.Autocomplete(input);
         var map = new google.maps.Map(document.getElementById("map"), {
           zoom: 12,
-          center: { lat: -33.8688, lng: 151.2195 },
+          center: { lat: 11.240491416525806, lng: -74.20749546286402 },
         });
         var marker = new google.maps.Marker({
           map: map,
-          position: { lat: -33.8688, lng: 151.2195 },
+          position: { lat: 11.240491416525806, lng: -74.20749546286402 },
         });
         autocomplete.addListener('place_changed', function() {
           var place = autocomplete.getPlace();
