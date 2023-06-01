@@ -16,6 +16,7 @@ html{
 #map{
     padding: 25px auto auto;
     grid-area: map;
+    height: 410px;
 }
 .box{
     border-radius: 0 30px 30px 0;
@@ -52,7 +53,7 @@ html{
     grid-area: clinicas;
 }
 
-.cli1, .cli2{
+.cli1, .cli2, .cli3{
     background-color: #48BBBD;
 }
 
@@ -76,6 +77,12 @@ html{
         1fr 1fr;
 
     align-items: start;
+}
+h2{
+    color: #00a0a3;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
 }
 
 /* Scroll personalizado para la seccion de busqueda*/
@@ -253,7 +260,7 @@ h4{
 /* Footer */
 
 footer{
-    height: 100px;
+    height: 150px;
     background-color: #00a0a3;
 }
 
