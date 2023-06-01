@@ -68,6 +68,7 @@
       <div id="form-contraseña" class="modal">
         <!-- Aquí irá el formulario para modificar la contraseña -->
       </div>
+      <button class="btneliminar"> Eliminar cuenta </button>
     </div>
   </div>
 </template>
