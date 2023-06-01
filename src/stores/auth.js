@@ -5,9 +5,10 @@ import {
   signOut,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signInWithPopup
+  signInWithPopup,
 } from "firebase/auth";
 import { GoogleAuthProvider } from 'firebase/auth'
+import email from '../main'
 
 // eslint-disable-next-line no-unused-vars
 export const almacen = defineStore({
@@ -21,13 +22,16 @@ export const almacen = defineStore({
   }),
   getters: {},
   actions: {
+
     register() {
       const auth = getAuth();
       createUserWithEmailAndPassword(auth, this.email, this.password)
         .then((userCredential) => {
           // eslint-disable-next-line no-unused-vars
           const user = userCredential.user;
-          alert("Usuario Registrado!"); // Modifica este alert con sweetAlert
+
+          alert("Usuario Registrado!");
+          router.push("/auth"); // Modifica este alert con sweetAlert
         })
         .catch((error) => {
           // eslint-disable-next-line no-unused-vars
@@ -41,7 +45,8 @@ export const almacen = defineStore({
       const auth = getAuth();
       signInWithEmailAndPassword(auth, this.email, this.password)
         .then((userCredential) => {
-          alert("¡Sesión iniciada!"); // Modifica este alert con sweetAlert
+          email = this.email
+          alert("¡Sesión iniciada!"); 
           router.push("/auth");
           // eslint-disable-next-line no-unused-vars
           const user = userCredential.user;
@@ -58,7 +63,9 @@ export const almacen = defineStore({
       const auth = getAuth();
       signOut(auth)
         .then(() => {
-          alert("¡Sesión finalizada!"); // Modifica este alert con sweetAlert
+          email = ""
+          router.push("/");
+          alert("¡Sesión finalizada!"); 
         })
         .catch((error) => {
           // eslint-disable-next-line no-unused-vars
@@ -73,7 +80,7 @@ export const almacen = defineStore({
     
       signInWithPopup(auth, provider)
         .then((result) => {
-          console.log(result.user);
+          email = result.user.email
           router.push("/auth");
         })
         .catch((error) => {
