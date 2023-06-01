@@ -12,7 +12,7 @@
     <div class="container">
       <div class="info">
         <img src="../assets/img/perroperfil.png" alt="Imagen redonda">
-        <p>correo@example.com</p>
+        <p id="correo"> email </p>
       </div>
       <div class="list-group">
         <button type="button" class="list-group-item list-group-item-action" data-toggle="modal"
@@ -76,9 +76,14 @@
 <script>
 import HeaderIn from './Headerin.vue';
 import MenuHeader from './Menu.vue';
+import email from '../main'
 export default {
   name: "UserProfile",
   mounted() {
+
+    const mail = document.getElementById('correo')
+    mail.textContent = email;
+
     // Obtener los botones de la lista desplegable
     const buttons = document.querySelectorAll('.list-group-item button');
     // Agregar un event listener a cada botón
