@@ -4,12 +4,13 @@
     <section id="inicio">
       <div class="seccionclinicas">
         <div id="map">
-          <div class="map" style="width: 100px; height: 400px;"></div>
+          <div class="map"></div>
         </div>
         <div class="buscarclinicas">
           <input id="autocomplete-input" type="text" placeholder="Conoce las clinicas cerca de tu zona">
         </div>
         <div class="clinicas">
+          <h2> Clinicas En Santa Marta</h2>
           <div class="cli1">
             <h3 class="nombreclinicas"> Clinica Veterinaria Santa Marta</h3>
             <p class="textclin"> 4.0  |     Veterinario</p>
@@ -19,10 +20,17 @@
           </div>
           <br/>
           <div class="cli2">
-            <h3 class="nombreclinicas"> Clinica Veterinaria Santa Marta</h3>
-            <p class="textclin"> 4.0  |     Veterinario</p>
+            <h3 class="nombreclinicas"> Consultorio veterinario Vetguro</h3>
+            <p class="textclin"> 4.9  |     Veterinario</p>
+            <p class="textclin">Más de 5 años de actividad</p>
+            <p class="textclin">Manzana 29 casa 1-...</p>
+            <p class="textclin">Abierto las 24 hora</p>
+          </div>
+          <div class="cli3">
+            <h3 class="nombreclinicas"> San Francisco Hospital Veterinario</h3>
+            <p class="textclin"> 4.1  |     Veterinario</p>
             <p class="textclin">Más de 7 años de actividad</p>
-            <p class="textclin">Avenida del Ferrocarril Calle 2...</p>
+            <p class="textclin">Manzana P casa 302-...</p>
             <p class="textclin">Abierto las 24 hora</p>
           </div>
         </div>

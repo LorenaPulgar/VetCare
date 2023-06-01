@@ -7,7 +7,7 @@
     <div>
         <nav class="menu">
             <ul> 
-                <li><a @click="GotoHome">Inicio</a></li>
+                <li><a @click="GotoHome" style="color: white;">Inicio</a></li>
                 <li><a href="https://laika.com.co/" target="_blank">Tienda Virtual</a></li>
                 <li v-if="!datos.isLoggedIn" @click="GoToLogIn" class="right"><a>Ingresar</a></li>
                 <li v-if="datos.isLoggedIn" @click="datos.signout" class="right"><a>Cerrar Sesión</a></li>

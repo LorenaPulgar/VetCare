@@ -37,6 +37,11 @@ const datos = almacen()
                     <input v-model="datos.password" type="password" required="true" placeholder="Contraseña">
                     <a href=""> Haz olvidado tu contraseña?</a>
                     <button>Entrar</button>
+                    <div class="redessociales">
+                        <p> Entra con otra cuenta:</p> 
+                        <i class="fa-brands fa-facebook fa-2xl" style="color: #0aa0a3;"></i>
+                        <i class="fa-brands fa-google fa-2xl" style="color: #0aa0a3;"></i>
+                    </div>
                 </form>
 
                 <!--Register-->

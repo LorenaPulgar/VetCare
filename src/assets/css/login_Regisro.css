@@ -1,7 +1,5 @@
 .fondopagina {
-    background-image: url('../img/fondo.jpg');
-    background-repeat: repeat;
-    background-size: 100%;
+    background-color: #0AA0A3;
 }
 
 *{
@@ -189,9 +187,6 @@
     outline: none;
 }
 
-
-
-
 .formulario__login{
     opacity: 1;
     display: block;
@@ -199,6 +194,15 @@
 .formulario__register{
     display: none;
 }
+.redessociales i{
+    padding-left: 30px;
+}
+.redessociales p{
+    margin-top: 10px;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 20px;
+}
+
 
 
 
