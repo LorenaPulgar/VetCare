@@ -39,8 +39,7 @@ const datos = almacen()
                     <button>Entrar</button>
                     <div class="redessociales">
                         <p> Entra con otra cuenta:</p> 
-                        <i class="fa-brands fa-facebook fa-2xl" style="color: #0aa0a3;"></i>
-                        <i class="fa-brands fa-google fa-2xl" style="color: #0aa0a3;"></i>
+                        <i @click="datos.signInWithGoogle" class="fa-brands fa-google fa-2xl" style="color: #0aa0a3;"></i>
                     </div>
                 </form>
 
@@ -69,8 +68,8 @@ export default {
     methods: {
         GoToHome(){
             this.$router.push({name: 'Home'})
-        }
-    },
+        },
+},
     mounted() {
         document.getElementById("btn__iniciar-sesion").addEventListener("click", iniciarSesion);
         document.getElementById("btn__registrarse").addEventListener("click", register);
