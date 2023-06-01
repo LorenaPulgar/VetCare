@@ -29,9 +29,8 @@ export const almacen = defineStore({
         .then((userCredential) => {
           // eslint-disable-next-line no-unused-vars
           const user = userCredential.user;
-
-          alert("Usuario Registrado!");
           router.push("/auth"); // Modifica este alert con sweetAlert
+          console.log('Usuarioregistrado'); // Modifica este alert con sweetAlert
         })
         .catch((error) => {
           // eslint-disable-next-line no-unused-vars
@@ -46,7 +45,8 @@ export const almacen = defineStore({
       signInWithEmailAndPassword(auth, this.email, this.password)
         .then((userCredential) => {
           email = this.email
-          alert("¡Sesión iniciada!"); 
+          console.log('Sesión iniciada correctamente');
+
           router.push("/auth");
           // eslint-disable-next-line no-unused-vars
           const user = userCredential.user;
@@ -65,7 +65,7 @@ export const almacen = defineStore({
         .then(() => {
           email = ""
           router.push("/");
-          alert("¡Sesión finalizada!"); 
+          console.log('Sesión terminada');
         })
         .catch((error) => {
           // eslint-disable-next-line no-unused-vars
