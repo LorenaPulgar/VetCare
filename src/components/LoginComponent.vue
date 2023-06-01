@@ -42,12 +42,12 @@ const datos = almacen()
                 <!--Register-->
                 <form @submit.prevent="datos.register" class="formulario__register">
                     <h2 class="textTitul">Regístrarse</h2>
-                    <input type="text" placeholder="Nombre completo">
+                    <input v-model="nombre" type="text" placeholder="Nombre completo">
                     <input v-model="datos.email" type="email" required="true" placeholder="Correo Electronico">
-                    <input type="text" placeholder="Usuario">
+                    <input v-model="user" type="text" placeholder="Usuario">
                     <input v-model="datos.password" type="password" required="true" placeholder="Contraseña">
                     <input v-model="datos.repassword" type="password" required="true" placeholder="Repetir Contraseña">
-                    <button>Regístrarse</button>
+                    <button @submit.prevent="guardarDatos">Regístrarse</button>
                 </form>
             </div>
         </div>
@@ -59,12 +59,21 @@ const datos = almacen()
 </style>
 
 <script>
+
+import firebase from '../main';
+
 export default {
     name: 'LoginComponent',
     methods: {
         GoToHome(){
             this.$router.push({name: 'Home'})
         }
+    },
+    data() {
+        return {
+            nombre: '',
+            user: '',
+        };
     },
     mounted() {
         document.getElementById("btn__iniciar-sesion").addEventListener("click", iniciarSesion);
@@ -79,6 +88,25 @@ export default {
         var caja_trasera_register = document.querySelector(".caja__trasera-register");
 
         //FUNCIONES
+
+        function guardarDatos() {
+            const database = firebase.database();
+            const newRef = database.ref().push();
+
+            newRef.set({
+                nombre: this.nombre,
+                user: this.user
+            })
+            .then(() => {
+                console.log("Data Saving!")
+            })
+            .catch(error => {
+                console.log("Error in save")
+            })
+
+            this.nombre = ''
+            this.user = ''
+        }
 
         function anchoPage() {
 
