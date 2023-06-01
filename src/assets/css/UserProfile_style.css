@@ -59,4 +59,19 @@
     bottom: 0;
     margin: auto;
 }
+
+.btneliminar{
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+    border: none;
+    width: 300px;
+}
+
+.btneliminar:hover{
+    color: red;
+    background-color: rgb(242, 242, 242);
+}
   
