@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { initializeApp } from "firebase/app"
 
+import firebase from 'firebase/app';
+import 'firebase/database';
 import App from './App.vue'
 import router from './router'
 
@@ -12,6 +14,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 const firebaseConfig = {
   apiKey: "AIzaSyC-OxGWceSwlKMhvjaefdCw25gCDKPmf1U",
   authDomain: "vetcare-1a465.firebaseapp.com",
+  databaseURL: "https://vetcare-1a465-default-rtdb.firebaseio.com",
   projectId: "vetcare-1a465",
   storageBucket: "vetcare-1a465.appspot.com",
   messagingSenderId: "3390327220",
